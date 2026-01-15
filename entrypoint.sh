@@ -8,8 +8,9 @@ echo "validation-only: $5"
 echo "csv-output: $6"
 echo "exit-on-warning: $7"
 echo "supplementary-aadl: $8"
+echo "rulesets: $9"
 
-runCommand=(/Sireum/bin/linux/fmide/fmide -application com.rockwellcollins.atc.resolute.cli.Resolute)
+runCommand=(/Sireum/bin/linux/fmide/fmide -application com.rockwellcollins.atc.resolint.cli.Resolint)
 
 runCommand+=(-noSplash -data ${GITHUB_WORKSPACE}/$1 -compImpl $2)
 
@@ -22,7 +23,7 @@ if [ "XX $5" = 'XX "true"' ] ; then
 fi
 
 if [ "XX $6" = 'XX "true"' ]; then
-	runCommand+=(-csv)
+	runCommand+=(-returnPassingResults)
 fi
 
 if [ "XX $7" = 'XX "true"' ]; then
@@ -31,6 +32,10 @@ fi
 
 if [[ -n $8 ]]; then
 	runCommand+=(-files $8)
+fi
+
+if [[ -n $8 ]]; then
+	runCommand+=(-files $9)
 fi
 
 runCommand+=(-o $4)
