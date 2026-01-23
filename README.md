@@ -10,7 +10,7 @@ This action conducts Resolint checks on a the named component.
 
 ### `output-path`
 
-**Required** The absolute output path for the JSON formatted results.
+The absolute output path for the JSON formatted results.  Default './Resolint_output.json'.
 
 ### `workspace-location`
 

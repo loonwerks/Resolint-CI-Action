@@ -2,10 +2,10 @@
 
 set -Eeuxo pipefail
 
-: "${workspace_location:=.}"
 : "${component_to_analyze:=platform::ZCU102.Impl}"
-: "${project_path:=}"
 : "${output_path:=./Resolint_output.json}"
+: "${workspace_location:=.}"
+: "${project_path:=}"
 : "${validation_only:=}"
 : "${return_passing_results:=}"
 : "${exit_on_warning:=}"
